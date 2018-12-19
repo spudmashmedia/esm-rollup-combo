@@ -1,0 +1,37 @@
+{
+  "name": "esm-rollup-combo",
+  "version": "1.0.0",
+  "description": "NO BABEL!!! NO WEBPACK!!! Just ESM.js + Rollup.js FTW!!! ლ(ಠ益ಠ)ლ",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "develop": "(node -r esm src/index.js) | bunyan",
+    "test": "mocha -r esm --recursive ./src/**/*.spec.js",
+    "build": "npm test && rollup --config rollup.config.prod.js",
+    "start": "NODE_ENV='production' node ./dist/app.bundle.js | bunyan"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bunyan": "^1.8.12",
+    "esm": "^3.0.84",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "moxios": "^0.4.0",
+    "rollup": "^0.68.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "sinon": "^7.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spudmashmedia/esm-rollup-combo.git"
+  },
+  "author": "Spudmash Media",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spudmashmedia/esm-rollup-combo/issues"
+  },
+  "homepage": "https://github.com/spudmashmedia/esm-rollup-combo#readme"
+}
