@@ -7,14 +7,16 @@ import axios from "axios";
 export default class HttpClient extends IHttpClient {
     constructor(baseUrl, logger) {
         super(baseUrl, logger);
-        
-        this.client = axios.create({baseURL: this.baseUrl});
+
+        this.client = axios.create({
+            baseURL: this.baseUrl
+        });
     }
 
     /**
      * HTTP GET
-     * @param {*} route 
-     * @param {*} options 
+     * @param {*} route
+     * @param {*} options
      */
     async Get(route, options) {
         await this.logger.Information("HttpClient::Get");
@@ -24,9 +26,11 @@ export default class HttpClient extends IHttpClient {
             let uri = route;
             // got parameters?
             if (options && options.queryParams) {
-                uri += ('?' + this.GetQueryString(options.queryParams));
+                uri += "?" + this.GetQueryString(options.queryParams);
             }
-            await this.logger.Information(`MockHttpClient::Get - fetching: ${uri}`)
+            await this.logger.Information(
+                `MockHttpClient::Get - fetching: ${uri}`
+            );
             const res = await this.client.get(uri);
             result.data = res.data;
         } catch (err) {
@@ -38,8 +42,8 @@ export default class HttpClient extends IHttpClient {
 
     /**
      * HTTP POST
-     * @param {*} route 
-     * @param {*} options 
+     * @param {*} route
+     * @param {*} options
      */
     async Post(route, options) {
         await this.logger.Information("HttpClient::Post");
@@ -50,10 +54,12 @@ export default class HttpClient extends IHttpClient {
 
             // got parameters?
             if (options && options.queryParams) {
-                uri += ('?' + this.GetQueryString(options.queryParams));
+                uri += "?" + this.GetQueryString(options.queryParams);
             }
 
-            await this.logger.Information(`MockHttpClient::Get - posting to: ${uri}`)
+            await this.logger.Information(
+                `MockHttpClient::Get - posting to: ${uri}`
+            );
             const res = await this.client.post(uri, {
                 headers: options.headers,
                 data: options.data

@@ -1,16 +1,16 @@
 import ILogger from "./ILogger.js";
 
 export default class MockLogger extends ILogger {
-    constructor(options){
+    constructor(options) {
         super(options);
-        this.logs = []
+        this.logs = [];
     }
 
-    async Information(msg){
+    async Information(msg) {
         await this.logs.push(msg);
     }
 
-    async GetLogs(){
+    async GetLogs() {
         return await this.logs;
     }
 }
