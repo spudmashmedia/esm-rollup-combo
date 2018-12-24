@@ -25,7 +25,7 @@ So ended up reverting to a combination of:
 
 **!!!Yes this rant is all about getting testing to work!!!**
 
-**!!!❌NO TESTS - ❌NO STRAIGHT TO PRODUCT #s2p!!!**
+**!!!❌NO TESTS - ❌NO STRAIGHT TO PRODUCTION #s2p!!!**
 
 ## 🤔 What happened to Babel & Webpack?
 
