@@ -11,11 +11,11 @@
         "start": "NODE_ENV='production' node ./dist/app/app.bundle.js | bunyan"
     },
     "dependencies": {
-        "axios": "^0.18.0",
+        "axios": "^0.18.1",
         "bunyan": "^1.8.12",
         "esm": "^3.0.84",
         "rollup-plugin-copy": "^0.2.3",
-        "sequelize": "^5.3.2",
+        "sequelize": "^5.12.3",
         "sqlite": "^3.0.0",
         "uuid": "^3.3.2"
     },
