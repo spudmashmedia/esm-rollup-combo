@@ -11,7 +11,7 @@
         "start": "NODE_ENV='production' node ./dist/app/app.bundle.js | bunyan"
     },
     "dependencies": {
-        "axios": "^0.18.1",
+        "axios": "^0.21.1",
         "bunyan": "^1.8.12",
         "esm": "^3.2.25",
         "rollup-plugin-copy": "^0.2.3",
